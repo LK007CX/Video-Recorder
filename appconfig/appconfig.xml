@@ -1,0 +1,16 @@
+<appsettings>
+    <camera>
+        <image>None</image>
+        <video>None</video>
+        <video_looping>None</video_looping>
+        <rtsp>None</rtsp>
+        <rtsp_latency>200</rtsp_latency>
+        <usb>0</usb>
+        <gstr>None</gstr>
+        <onboard>None</onboard>
+        <copy_frame>False</copy_frame>
+        <do_resize>False</do_resize>
+        <width>800</width>
+        <height>480</height>
+    </camera>
+</appsettings>
