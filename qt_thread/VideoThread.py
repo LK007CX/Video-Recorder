@@ -20,7 +20,7 @@ class VideoThread(QThread):
     def __init__(self, config_path, *args, **kwargs):
         super(VideoThread, self).__init__(*args, **kwargs)
         self._args = self._load_config(config_path)
-        self._cam = Camera(self._args)
+        self._cam = None
 
 
     def _load_config(self, config_path):
@@ -71,16 +71,18 @@ class VideoThread(QThread):
         return args
 
     def run(self):
+        self._cam = Camera(self._args)
         if not self._cam.is_opened:
             print("打开相机失败")
         fps = 0
         tic = time.time()
         while True:
+            print("....")
             img = self._cam.read()
             if img is None:
                 print("没有相机数据")
             img = show_fps(img, fps)
-            cv2.imshow(img)
+            # cv2.imshow(img)
             self.image_Signal.emit(img)
             toc = time.time()
             curr_fps = 1.0 / (toc - tic)

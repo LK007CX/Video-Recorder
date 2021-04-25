@@ -185,7 +185,8 @@ class Camera():
             self._start()
         elif a.usb is not None:
             logging.info('Camera: using USB webcam /dev/video%d' % a.usb)
-            self.cap = open_cam_usb(a.usb, a.width, a.height)
+            # self.cap = open_cam_usb(a.usb, a.width, a.height)
+            self.cap = cv2.VideoCapture(a.usb)
             self._start()
         elif a.gstr is not None:
             logging.info('Camera: using GStreamer string "%s"' % a.gstr)

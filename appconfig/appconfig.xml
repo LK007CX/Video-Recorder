@@ -10,7 +10,7 @@
         <onboard>None</onboard>
         <copy_frame>False</copy_frame>
         <do_resize>False</do_resize>
-        <width>800</width>
-        <height>480</height>
+        <width>1280</width>
+        <height>720</height>
     </camera>
 </appsettings>

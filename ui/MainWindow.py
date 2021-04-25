@@ -7,7 +7,7 @@ from PyQt5.QtCore import QSize
 from PyQt5.QtWidgets import QMainWindow, QApplication, QHBoxLayout, QWidget
 
 from ui.VideoWidget import VideoWidget
-from _thread.VideoThread import VideoThread
+from qt_thread.VideoThread import VideoThread
 
 
 class MainWindow(QMainWindow):
@@ -17,6 +17,7 @@ class MainWindow(QMainWindow):
         self._videoWidget = VideoWidget()
         self._init_ui()
         self._video_thread = VideoThread(config_path)
+        self._init_thread()
 
     def _init_ui(self):
         # self._videoWidget.setFixedSize(QSize(960, 540))
